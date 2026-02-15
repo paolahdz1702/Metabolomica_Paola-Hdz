@@ -1,0 +1,29 @@
+# Nombre:
+  # Ejercicio curvas de amplificación 
+install.packages("pacman")
+library("pacman")
+p_load("vroom",
+       "dplyr",
+       "ggplot2")
+
+Garu <- vroom(file="https://raw.githubusercontent.com/ManuelLaraMVZ/resultados_PCR_practica/refs/heads/main/Amplif_grupo1_17022025.csv")
+head(Garu)
+
+Datos <- Garu %>% 
+  select("Cycle","A1")
+Datos
+
+Grafica <- ggplot(Datos,
+                  mapping = aes(x=Cycle,
+                                y=A1))+
+  geom_line(color="#E0A599",
+            size=1.5)+
+  labs(x="Ciclos",
+       y="Fluoerscencia",
+       title="Gráfica de aplificación RT-qPCR",
+       sutitle="Muestra A1",
+       caption="Diseño: Paola López")+
+geom_point(color="#CA99E0")+
+theme_classic()
+  
+Grafica

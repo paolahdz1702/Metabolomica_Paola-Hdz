@@ -39,12 +39,20 @@ Recaudacion_mundial <- c(41000000,
                          29900000,
                          30000000)
 
-# Dataframe
+# Evitar notación científica en general
+options(scipen = 999)
+
+# Crear el dataframe con stringsAsFactors = FALSE
 df_peliculas <- data.frame(Película,
                            Premios_Oscar_2025,
                            Mes_de_estreno,
                            Recaudacion_mundial,
                            stringsAsFactors = FALSE)
 
-# Llamar el dataframe
+# Mostrar recaudación con formato de dinero
+df_peliculas$Recaudacion_mundial <- format(df_peliculas$Recaudacion_mundial,
+                                           big.mark = ",",
+                                           scientific = FALSE)
+
 View(df_peliculas)
+

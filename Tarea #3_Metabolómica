@@ -1,0 +1,50 @@
+#Paola López 
+#Metabolómica
+#Grupo 2
+#Tarea 3
+
+# Vector A: Película
+Película <- c("Anora",
+              "The Brutalist",
+              "Flow",
+              "Emilia Pérez",
+              "Wicked",
+              "Dune: Part Two",
+              "I’m Still Here")
+
+# Vector B: Premios Oscar 2025
+Premios_Oscar_2025 <- c("Mejor Película, Mejor Director, Mejor Actriz, Mejor Guion Original, Mejor Montaje",
+                        "Mejor Actor, Mejor Fotografía, Mejor Banda Sonora",
+                        "Mejor Película de Animación",
+                        "Mejor Actriz de Reparto, Mejor Canción Original",
+                        "Mejor Diseño de Vestuario, Diseño de Producción",
+                        "Mejor Sonido, Mejores Efectos Visuales",
+                        "Mejor Película Internacional")
+
+# Vector C: Mes de estreno
+Mes_de_estreno <- c("Enero",
+                    "Diciembre",
+                    "Diciembre",
+                    "Mayo",
+                    "Noviembre",
+                    "Marzo",
+                    "Febrero")
+
+# Vector D: Recaudación mundial (estimada)
+Recaudacion_mundial <- c(41000000,
+                         41400000,
+                         728000000,
+                         714000000,
+                         20000000,
+                         29900000,
+                         30000000)
+
+# Dataframe
+df_peliculas <- data.frame(Película,
+                           Premios_Oscar_2025,
+                           Mes_de_estreno,
+                           Recaudacion_mundial,
+                           stringsAsFactors = FALSE)
+
+# Llamar el dataframe
+View(df_peliculas)
